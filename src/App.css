@@ -13,9 +13,40 @@
   }
 }
 
+.App-menu {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.App-header_item {
+  width: 100px;
+  background: gray;
+  height: 30px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 20px 20px 30px 20px;
+}
+
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: relative;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.App-main {
+  background-color: #282c34;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,3 +67,23 @@
     transform: rotate(360deg);
   }
 }
+
+
+.menu-item_active {
+  color: chartreuse !important;
+  font-size: 26px !important;
+}
+
+.App-header_item a {
+  color: black;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 22px;
+}
+
+
+
+/*.App-header_item a:-webkit-any-link {*/
+/*  background-color: black;*/
+/*}*/
+
