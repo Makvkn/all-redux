@@ -3,7 +3,7 @@ import "./../App.css"
 import HeaderItem from "./HeaderItem";
 const Header = () => {
 
-    const [headerItem] = useState<string[]>(["Redux", "MobX", "Redux-toolkit", "Redux-Saga", "Redux-Thunk"])
+    const [headerItem] = useState<string[]>(["Redux", "MobX", "Toolkit", "Redux-Saga", "Redux-Thunk"])
 
     return (
         <header className="App-header">
