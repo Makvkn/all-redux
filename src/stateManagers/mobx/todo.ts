@@ -19,7 +19,7 @@ class Todo {
     }
 
     fetchTodos() {
-        fetch('https://jsonplaceholder.typicode.com/todos')
+        fetch('https://jsonplaceholder.typicode.com/todos_limit=10')
             .then(response => response.json())
             .then(json => {
                 this.todos = [...this.todos, ...json]

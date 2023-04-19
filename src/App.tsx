@@ -32,15 +32,9 @@ function App() {
             <Header/>
             <main className="App-main">
                 <Routes>
-                    {/*<Provider store={store}>*/}
-                        <Route path="/Redux" element={<MiddleComponent/>}/>
-                    {/*</Provider>*/}
-
+                    <Route path="/Redux" element={<MiddleComponent/>}/>
                     <Route path="/MobX" element={<MobX/>}/>
-
-                    {/*<Provider store={storeToolkit}>*/}
-                        <Route path="/Toolkit" element={<MiddleComponent2/>}/>
-                    {/*</Provider>*/}
+                    <Route path="/Toolkit" element={<MiddleComponent2/>}/>
                 </Routes>
             </main>
         </div>
