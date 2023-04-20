@@ -1,9 +1,14 @@
 import React, {KeyboardEvent, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {actionDecrease, actionIncrease, actionZero} from "../stateManagers/redux/counterReducer";
+import {
+    actionDecrease,
+    actionIncrease,
+    actionZero, AsyncActionDecreaseCreator,
+    AsyncActionIncreaseCreator
+} from "../stateManagers/redux/counterReducer";
 import "./style.css"
 import {todo} from "../stateManagers/redux/types";
-import {actionAdd, actionRemove} from "../stateManagers/redux/todoReducer";
+import {actionAdd, actionRemove, asyncFetchTodos} from "../stateManagers/redux/todoReducer";
 
 
 const PageRedux = () => {
@@ -31,6 +36,9 @@ const PageRedux = () => {
     const removeTodo = (id: number) => {
         dispatch(actionRemove(id))
     }
+    const addManyTodos = () => {
+        dispatch(asyncFetchTodos())
+    }
 
     return (
         <div>
@@ -46,6 +54,7 @@ const PageRedux = () => {
                            onChange={(e) => setNote(e.target.value)}
                            onKeyUp={submitForm}
                     />
+                    <button className="liButton" onClick={() => addManyTodos()}>Add Todos</button>
                     <label htmlFor="name" className="form__label">Let's write</label>
                 </div>
                 <ul>
@@ -64,6 +73,8 @@ const PageRedux = () => {
                 </h3>
                 <div className="buttons">
                     <button className="countButton" onClick={() => {dispatch(actionIncrease())}}>Increase</button>
+                    <button className="countButton" onClick={() => {dispatch(AsyncActionIncreaseCreator())}}>Increase Async</button>
+                    <button className="countButton" onClick={() => {dispatch(AsyncActionDecreaseCreator())}}>Increase Async</button>
                     <button className="countButton" onClick={() => {dispatch(actionDecrease())}}>Decrease</button>
                     <button className="countButton" onClick={() => {dispatch(actionZero())}}>Zero</button>
                 </div>
